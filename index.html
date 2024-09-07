@@ -1,13 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>trabajo
-    </title>
+    <title>Mi Página Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .container {
+            padding: 20px;
+        }
+        .content {
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .tabs {
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+        .tabs button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+        }
+        .tabs button:hover {
+            background-color: #ddd;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <h1>holaaaaaaaaaaaa</h1>
-    
+    <header>
+        <h1>Mi Página Web</h1>
+    </header>
+
+    <nav>
+        <a href="#home" onclick="showTab('home')">Inicio</a>
+        <a href="#about" onclick="showTab('about')">Acerca de</a>
+        <a href="#services" onclick="showTab('services')">Servicios</a>
+        <a href="#contact" onclick="showTab('contact')">Contacto</a>
+    </nav>
+
+    <div class="container">
+        <div class="tabs">
+            <button onclick="showTab('home')">Inicio</button>
+            <button onclick="showTab('about')">Acerca de</button>
+            <button onclick="showTab('services')">Servicios</button>
+            <button onclick="showTab('contact')">Contacto</button>
+        </div>
+
+        <div id="home" class="tab-content active">
+            <h2>Bienvenido a Nuestra Página</h2>
+            <p>Este es el contenido de la página de inicio.</p>
+            <!-- Cambia 'imagen1.jpg' por la ruta de tu nueva imagen -->
+            <img src="nueva-imagen1.jpg" alt="Imagen de Inicio" width="300">
+        </div>
+
+        <div id="about" class="tab-content">
+            <h2>Acerca de Nosotros</h2>
+            <p>Aquí va información sobre nosotros.</p>
+            <!-- Cambia 'imagen2.jpg' por la ruta de tu nueva imagen -->
+            <img src="nueva-imagen2.jpg" alt="Imagen Acerca de" width="300">
+        </div>
+
+        <div id="services" class="tab-content">
+            <h2>Servicios</h2>
+            <p>Descripción de los servicios ofrecidos.</p>
+            <!-- Cambia 'imagen3.jpg' por la ruta de tu nueva imagen -->
+            <img src="nueva-imagen3.jpg" alt="Imagen Servicios" width="300">
+        </div>
+
+        <div id="contact" class="tab-content">
+            <h2>Contacto</h2>
+            <form action="#" method="post">
+                <label for="name">Nombre:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Correo Electrónico:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="message">Mensaje:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Mi Página Web. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => {
+                if (tab.id === tabId) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
